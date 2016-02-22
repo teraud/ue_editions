@@ -1,0 +1,25 @@
+<div class='formulaire_spip formulaire_editer formulaire_#FORM formulaire_#FORM-#ENV{id_ue_edition,nouveau}'>
+	[<p class="reponse_formulaire reponse_formulaire_ok">(#ENV**{message_ok})</p>]
+	[<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
+
+	[(#ENV{editable})
+	<form method='post' action='#ENV{action}'><div>
+		#ACTION_FORMULAIRE{#ENV{action}}
+		<input type='hidden' name='id_ue_edition' value='#ENV{id_ue_edition}' />
+		
+		<ul>
+			[(#SAISIE{input, titre, label=<:ue_edition:label_titre:>, obligatoire=oui})]
+			[(#SAISIE{textarea, texte, label=<:ue_edition:label_texte:>})]
+			[(#SAISIE{input, module_temps_1, label=<:ue_edition:label_module_temps_1:>})]
+			[(#SAISIE{input, module_temps_2, label=<:ue_edition:label_module_temps_3:>})]
+			[(#SAISIE{input, module_temps_3, label=<:ue_edition:label_module_temps_3:>})]
+			[(#SAISIE{input, atelier_temps_1, label=<:ue_edition:label_atelier_temps_1:>})]
+			[(#SAISIE{input, atelier_temps_2, label=<:ue_edition:label_atelier_temps_2:>})]
+		</ul>
+		
+		[(#REM) ajouter les saisies supplementaires : extra et autre, a cet endroit ]
+		<!--extra-->
+		<p class="boutons"><input type='submit' class='submit' name='enregistrer' value='<:bouton_enregistrer:>' /></p>
+	</div></form>
+	]
+</div>

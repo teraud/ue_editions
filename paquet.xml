@@ -1,0 +1,24 @@
+<paquet
+	prefix="ue_editions"
+	categorie="edition"
+	version="1.0.0"
+	etat="dev"
+	compatibilite="[3.0.0;3.0.*]"
+	logo="prive/themes/spip/images/ue_edition-128.png"
+	schema="1.1.0"
+>
+	<nom>Éditions de l'UE</nom>
+
+	<auteur>CRID</auteur>
+	<licence>GNU/GPL</licence>
+
+	<pipeline nom="declarer_tables_objets_sql" inclure="base/ue_editions.php" />
+	<pipeline nom="declarer_tables_interfaces" inclure="base/ue_editions.php" />
+	<pipeline nom="autoriser" inclure="inc/ue_editions_autoriser.php" />
+
+	<!-- facilitons les champs de formulaires -->
+	<necessite nom="saisies" compatibilite="[2.5.0;[" />
+
+	<menu nom="ue_editions" titre="ue_edition:titre_ue_editions" parent="menu_edition" icone="images/ue_edition-16.png" />
+
+</paquet>
